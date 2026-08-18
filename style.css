@@ -18,3 +18,27 @@ header {
 main {
   padding: 2rem;
 }
+
+.nav-dropdown {
+
+}
+
+.navname {
+  color: lightskyblue;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 25px;
+  transition: transform 0.2s ease;
+}
+
+.navname:hover{
+  transform: scale(1.5);
+}
+
+.nav-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid lightskyblue;
+}
