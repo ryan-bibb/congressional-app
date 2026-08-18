@@ -19,6 +19,7 @@ main {
   padding: 2rem;
 }
 
+<<<<<<< Updated upstream
 .nav-dropdown {
 
 }
@@ -36,9 +37,40 @@ main {
 }
 
 .nav-bar{
+=======
+.nav-bar {
+>>>>>>> Stashed changes
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 32px;
   border-bottom: 1px solid lightskyblue;
 }
+<<<<<<< Updated upstream
+=======
+
+ .navname {
+  display: inline-block;
+  text-decoration: none;
+  color: lightskyblue;
+  font-weight: 600;
+  font-size: 25px;
+  transition: transform 0.2s ease;
+}
+
+.navname:hover {
+  transform: scale(1.15);
+}
+
+
+.nav-dropdown {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-dropdown a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+>>>>>>> Stashed changes
