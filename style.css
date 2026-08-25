@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,8 +25,23 @@ main {
   padding: 2rem;
 }
 
-.nav-dropdown {
+.nav-dropdown a {
+  color: lightskyblue;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
 
+.nav-dropdown a:hover {
+  transform: translateY(-3px);
+  color: #73bbfa;
+}
+
+.nav-dropdown {
+  list-style: none;
+  display: flex;
+  gap: 15px;
 }
 
 .navname {
@@ -29,6 +50,7 @@ main {
   font-weight: 600;
   font-size: 25px;
   transition: transform 0.2s ease;
+  font-family: "Raleway", sans-serif;
 }
 
 .navname:hover{
