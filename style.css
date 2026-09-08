@@ -64,3 +64,51 @@ main {
   padding: 16px 32px;
   border-bottom: 1px solid lightskyblue;
 }
+
+main section h1 {
+  color: lightskyblue;
+}
+
+#weatherForm {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  max-width: 400px;
+}
+
+#cityInput {
+  border: 1px solid lightskyblue;
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 16px;
+}
+#cityInput:focus {
+  outline: none;
+  border-color: lightskyblue;
+}
+#weatherForm button {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  background: lightskyblue;
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+#weatherForm button:hover {
+  background: #73bbfa;
+}
+
+#weatherResult {
+  margin-top: 15px;
+}
+
+#weatherResult h2 {
+  color: lightskyblue;
+}
+
