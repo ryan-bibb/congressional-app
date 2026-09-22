@@ -6,7 +6,7 @@ const airForm = document.getElementById("airForm");
 const airCityInput = document.getElementById("airCityInput");
 const airResult = document.getElementById("airResult");
 const ap1Labels = {1: "good", 2: "fair", 3: "moderate", 4: "poor", 5: "very poor"};
-const WEATHER_API_KEY = "9a16fb3eba439890602f3b958e701574"
+
 
 weatherForm.addEventListener("submit", async (event)=>{
     event.preventDefault();
@@ -36,12 +36,24 @@ airForm.addEventListener("submit", async (event)=>{
         return;
     } 
     airResult.textContent = "loading";
+    
     try{
-        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${WEATHER_API_KEY}')
+        const GEOResponse = await fetch('https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${WEATHER_API_KEY}')
         if (!response.ok) {
             throw new Error("Error Finding City")
         }
         const data = await response.json();
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${WEATHER_API_KEY}`)
+
+        if (!response.ok) {
+            throw new Error("Error")
+        }
+        const GEOData = await response.json();
+        const aqi = GEOData.list[0].main.aqi;
+        const components = GEOData.list[0].components;
+        airResult.innerHTML = `<h2>${data.name}, ${data.sys.country} Air Quality - ${ap1Labels[aqi]}</h2><p>PM2.5: ${components.pm2_5} — PM10: ${components.pm10}</p><p>O3: ${components.o3} — NO2: ${components.no2}</p>`
+
+        
     }catch(error){
         airResult.textContent = error.message;
     }
