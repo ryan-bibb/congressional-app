@@ -6,6 +6,7 @@ const airForm = document.getElementById("airForm");
 const airCityInput = document.getElementById("airCityInput");
 const airResult = document.getElementById("airResult");
 const ap1Labels = {1: "good", 2: "fair", 3: "moderate", 4: "poor", 5: "very poor"};
+const WEATHER_API_KEY = "9a16fb3eba439890602f3b958e701574";
 
 
 weatherForm.addEventListener("submit", async (event)=>{
@@ -38,11 +39,11 @@ airForm.addEventListener("submit", async (event)=>{
     airResult.textContent = "loading";
     
     try{
-        const GEOResponse = await fetch('https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${WEATHER_API_KEY}')
-        if (!response.ok) {
+        const GEOResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${WEATHER_API_KEY}`)
+        if (!GEOResponse.ok) {
             throw new Error("Error Finding City")
         }
-        const data = await response.json();
+        const data = await GEOResponse.json();
         const response = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${WEATHER_API_KEY}`)
 
         if (!response.ok) {
