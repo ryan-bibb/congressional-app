@@ -6,7 +6,7 @@ const airForm = document.getElementById("airForm");
 const airCityInput = document.getElementById("airCityInput");
 const airResult = document.getElementById("airResult");
 const ap1Labels = {1: "good", 2: "fair", 3: "moderate", 4: "poor", 5: "very poor"};
-const WEATHER_API_KEY = "9a16fb3eba439890602f3b958e701574";
+const {WEATHER_API_KEY} = process.env;
 
 
 weatherForm.addEventListener("submit", async (event)=>{

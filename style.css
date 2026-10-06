@@ -151,3 +151,15 @@ main section h1 {
   color: var(--main-color);
 }
 
+#airCityInput {
+  border: 1px solid var(--main-color);
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 16px;
+}
+#airCityInput:focus {
+  outline: none;
+  border-color: var(--interact-color);
+}
