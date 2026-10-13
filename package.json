@@ -2,9 +2,8 @@
   "name": "congressional-app",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
   "scripts": {
-    "dev": "live-server",
+    "start": "vercel dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/ryan-bibb/congressional-app/issues"
   },
-  "homepage": "https://github.com/ryan-bibb/congressional-app#readme",
-  "devDependencies": {
-    "live-server": "^1.2.2"
-  }
+  "homepage": "https://github.com/ryan-bibb/congressional-app#readme"
 }

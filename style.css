@@ -2,7 +2,6 @@
 
 :root {
   --main-color: lightskyblue;
-  --dark-color: hsl(from var(--main-color) h s calc(l * 0.5));
   --interact-color: #73bbfa;
 }
 
@@ -20,12 +19,6 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   color: #1a1a1a;
-
-}
-
-header {
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid #e0e0e0;
 }
 
 main {
@@ -60,11 +53,11 @@ main {
   font-family: "Raleway", sans-serif;
 }
 
-.navname:hover{
+.navname:hover {
   transform: scale(1.5);
 }
 
-.nav-bar{
+.nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,14 +69,14 @@ main section h1 {
   color: var(--main-color);
 }
 
-#weatherForm {
+.city-form {
   display: flex;
   gap: 10px;
   margin-top: 15px;
   max-width: 400px;
 }
 
-#cityInput {
+.city-form input {
   border: 1px solid var(--main-color);
   flex: 1;
   padding: 10px 14px;
@@ -91,75 +84,30 @@ main section h1 {
   font-family: inherit;
   font-size: 16px;
 }
-#cityInput:focus {
+.city-form input:focus {
   outline: none;
   border-color: var(--interact-color);
 }
 
-#weatherForm button {
+.city-form button {
   padding: 10px 14px;
   border-radius: 6px;
   border: none;
   background: var(--main-color);
   color: white;
   font-family: inherit;
-  font-size: inherit;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.2s ease;
 }
-#weatherForm button:hover {
+.city-form button:hover {
   background: var(--interact-color);
 }
 
-#weatherResult {
+.result {
   margin-top: 15px;
 }
 
-#weatherResult h2 {
+.result h2 {
   color: var(--main-color);
-}
-
-#airForm {
-  display: flex;
-  gap: 10px;
-  margin-top: 15px;
-  max-width: 400px;
-}
-
-#airForm button {
-  padding: 10px 14px;
-  border-radius: 6px;
-  border: none;
-  background: var(--main-color);
-  color: white;
-  font-family: inherit;
-  font-size: inherit;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-#airForm button:hover {
-  background: var(--interact-color);
-}
-
-#airResult {
-  margin-top: 15px;
-}
-
-#airResult h2 {
-  color: var(--main-color);
-}
-
-#airCityInput {
-  border: 1px solid var(--main-color);
-  flex: 1;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 16px;
-}
-#airCityInput:focus {
-  outline: none;
-  border-color: var(--interact-color);
 }

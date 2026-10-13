@@ -8,65 +8,36 @@
 </head>
 <body>
   <div class="nav-bar">
-    <a class="navname" href="/">
-      Air AI.
-    </a>
-  
+    <a class="navname" href="/">Air AI.</a>
     <ul class="nav-dropdown" id="navDropdown">
-      <li>
-        <a href="#home">
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="#air">
-        Air
-      </a>
-    </li>
-    <li>
-      <a href="#weather">
-        Weather
-      </a>
-    </li>
-    </ul> 
+      <li><a href="#home">Home</a></li>
+      <li><a href="#air">Air</a></li>
+      <li><a href="#weather">Weather</a></li>
+    </ul>
   </div>
 
   <main>
     <section id="home">
-      <h1>
-        Home
-      </h1>
+      <h1>Home</h1>
     </section>
+
     <section id="air">
-      <h1>
-        Air
-      </h1>
-      <form id="airForm">
-        <input type="text" id="airCityInput" placeholder="enter a city" required>
-        <button type="submit">
-         Get Air Quality
-        </button>
-
+      <h1>Air</h1>
+      <form id="airForm" class="city-form">
+        <input id="airCityInput" type="text" required placeholder="Enter a city">
+        <button type="submit">Get Air Quality</button>
       </form>
-        <div id="airResult">
-
-        </div>
+      <div id="airResult" class="result"></div>
     </section>
+
     <section id="weather">
-      <h1>
-        Weather
-      </h1>
-      <form id="weatherForm">
-        <input id="cityInput" type="text" required placeholder="Enter A City">
-        <button type="submit">
-          Submit
-        </button>
+      <h1>Weather</h1>
+      <form id="weatherForm" class="city-form">
+        <input id="cityInput" type="text" required placeholder="Enter a city">
+        <button type="submit">Get Weather</button>
       </form>
-      <div id="weatherResult">
-         
-      </div>
+      <div id="weatherResult" class="result"></div>
     </section>
-
   </main>
   <script src="script.js" defer></script>
 </body>
