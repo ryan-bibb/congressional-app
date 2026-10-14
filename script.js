@@ -5,6 +5,7 @@ const airForm = document.getElementById("airForm");
 const airCityInput = document.getElementById("airCityInput");
 const airResult = document.getElementById("airResult");
 const aqiLabels = {1: "good", 2: "fair", 3: "moderate", 4: "poor", 5: "very poor"};
+const AIForm = document.getElementById("AICityInput")
 
 weatherForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -45,4 +46,5 @@ airForm.addEventListener("submit", async (event) => {
     } catch (error) {
         airResult.textContent = error.message;
     }
+    AIForm.addEventListener
 });
