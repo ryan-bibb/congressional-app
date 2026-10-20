@@ -1,3 +1,5 @@
+const {aqiLabels} = require("./_lib/aqi");
+
 module.exports = async (req, res) => {
     const {city} = req.query;
     if (!city) {
@@ -21,6 +23,7 @@ module.exports = async (req, res) => {
         name: geo.name,
         country: geo.sys.country,
         aqi: air.list[0].main.aqi,
+        airQuality: aqiLabels[air.list[0].main.aqi],
         components: air.list[0].components,
     });
 };

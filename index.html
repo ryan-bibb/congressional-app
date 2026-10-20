@@ -17,28 +17,104 @@
   </div>
 
   <main>
-    <section id="home">
-      <h1>Home</h1>
+    <section id="home" class="hero">
+      <h1>Air AI.</h1>
+      <p class="tagline">INSERT MISSION STATEMENT HERE</p>
+      <form id="summaryForm" class="city-form">
+        <input id="summaryCityInput" type="text" required placeholder="Enter a city">
+        <button type="submit">Get AI Summary</button>
+      </form>
+      <div id="summaryResult" class="result"></div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>AI Summary</h3>
+          <p>Turns live weather and air data into plain advice: what to wear and whether to head outside.</p>
+        </div>
+        <div class="card">
+          <h3>Nearby Check</h3>
+          <p>Scans cities up to 20 miles away in every direction and warns you if their air is poor.</p>
+        </div>
+        <div class="card">
+          <h3>Air + Weather</h3>
+          <p>Look up the raw air quality and weather numbers for any city below.</p>
+        </div>
+      </div>
     </section>
 
     <section id="air">
       <h1>Air</h1>
+      <p class="section-intro">Check the air quality and pollutant levels for any city.</p>
       <form id="airForm" class="city-form">
         <input id="airCityInput" type="text" required placeholder="Enter a city">
         <button type="submit">Get Air Quality</button>
       </form>
       <div id="airResult" class="result"></div>
+
+      <h2 class="subheading">Air Quality Scale</h2>
+      <div class="aqi-scale">
+        <div class="aqi-level aqi-1"><strong>Good</strong><span>Great day to be outside.</span></div>
+        <div class="aqi-level aqi-2"><strong>Fair</strong><span>Fine for almost everyone.</span></div>
+        <div class="aqi-level aqi-3"><strong>Moderate</strong><span>Sensitive groups should take it easy.</span></div>
+        <div class="aqi-level aqi-4"><strong>Poor</strong><span>Limit long or hard activity outdoors.</span></div>
+        <div class="aqi-level aqi-5"><strong>Very Poor</strong><span>Stay inside if you can.</span></div>
+      </div>
+
+      <h2 class="subheading">What the Numbers Mean</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>PM2.5</h3>
+          <p>Tiny particles from smoke and exhaust that can reach deep into your lungs.</p>
+        </div>
+        <div class="card">
+          <h3>PM10</h3>
+          <p>Larger particles like dust and pollen that irritate your nose and throat.</p>
+        </div>
+        <div class="card">
+          <h3>O3</h3>
+          <p>Ground-level ozone, which builds up on hot, sunny days and makes breathing harder.</p>
+        </div>
+        <div class="card">
+          <h3>NO2</h3>
+          <p>A gas from cars and power plants, usually highest near busy roads.</p>
+        </div>
+      </div>
     </section>
 
     <section id="weather">
       <h1>Weather</h1>
+      <p class="section-intro">Get the current temperature and conditions for any city.</p>
       <form id="weatherForm" class="city-form">
         <input id="cityInput" type="text" required placeholder="Enter a city">
         <button type="submit">Get Weather</button>
       </form>
       <div id="weatherResult" class="result"></div>
+
+      <h2 class="subheading">Quick Tips</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Above 90°F</h3>
+          <p>Drink water often and avoid the midday sun.</p>
+        </div>
+        <div class="card">
+          <h3>Below 32°F</h3>
+          <p>Wear layers and cover your hands, ears, and face.</p>
+        </div>
+        <div class="card">
+          <h3>Rain or Storms</h3>
+          <p>Bring an umbrella and stay inside during lightning.</p>
+        </div>
+        <div class="card">
+          <h3>Wind Over 20 mph</h3>
+          <p>Secure loose items and watch for falling branches.</p>
+        </div>
+      </div>
     </section>
   </main>
+
+  <footer>
+    <p>Data from OpenWeather · AI summaries by Groq</p>
+  </footer>
   <script src="script.js" defer></script>
 </body>
 </html>
