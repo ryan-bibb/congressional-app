@@ -111,3 +111,44 @@ main section h1 {
 .result h2 {
   color: var(--main-color);
 }
+
+
+
+
+
+
+
+.AI-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  max-width: 400px;
+}
+
+.AI-form input {
+  border: 1px solid var(--main-color);
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 16px;
+}
+.AI-form input:focus {
+  outline: none;
+  border-color: var(--interact-color);
+}
+
+.AI-form button {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  background: var(--main-color);
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.AI-form button:hover {
+  background: var(--interact-color);
+}
