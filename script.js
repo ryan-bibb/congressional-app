@@ -4,8 +4,40 @@ const weatherResult = document.getElementById("weatherResult");
 const airForm = document.getElementById("airForm");
 const airCityInput = document.getElementById("airCityInput");
 const airResult = document.getElementById("airResult");
-const aqiLabels = {1: "good", 2: "fair", 3: "moderate", 4: "poor", 5: "very poor"};
-const AIForm = document.getElementById("AICityInput")
+const summaryForm = document.getElementById("summaryForm");
+const summaryCityInput = document.getElementById("summaryCityInput");
+const summaryResult = document.getElementById("summaryResult");
+
+summaryForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const city = summaryCityInput.value.trim();
+    if (!city) {
+        return;
+    }
+    summaryResult.textContent = "Loading…";
+    try {
+        const response = await fetch(`/api/summary?city=${encodeURIComponent(city)}`);
+        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(data.error);
+        }
+        const heading = document.createElement("h2");
+        heading.textContent = data.city;
+        const summary = document.createElement("p");
+        summary.textContent = data.summary;
+        summaryResult.replaceChildren(heading, summary);
+        if (data.nearby.length) {
+            const nearby = document.createElement("p");
+            nearby.className = "nearby";
+            const label = document.createElement("strong");
+            label.textContent = "Nearby air quality: ";
+            nearby.append(label, data.nearby.map((place) => `${place.city} (${place.miles} mi ${place.direction}) – ${place.airQuality}`).join(" · "));
+            summaryResult.append(nearby);
+        }
+    } catch (error) {
+        summaryResult.textContent = error.message;
+    }
+});
 
 weatherForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -42,9 +74,8 @@ airForm.addEventListener("submit", async (event) => {
             throw new Error(data.error);
         }
         const {components} = data;
-        airResult.innerHTML = `<h2>${data.name}, ${data.country} Air Quality - ${aqiLabels[data.aqi]}</h2><p>PM2.5: ${components.pm2_5} — PM10: ${components.pm10}</p><p>O3: ${components.o3} — NO2: ${components.no2}</p>`;
+        airResult.innerHTML = `<h2>${data.name}, ${data.country} Air Quality - ${data.airQuality}</h2><p>PM2.5: ${components.pm2_5} — PM10: ${components.pm10}</p><p>O3: ${components.o3} — NO2: ${components.no2}</p>`;
     } catch (error) {
         airResult.textContent = error.message;
     }
-    AIForm.addEventListener
 });
