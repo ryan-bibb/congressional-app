@@ -215,6 +215,15 @@ footer {
   background: var(--interact-color);
 }
 
+.signup-form {
+  max-width: 600px;
+  flex-wrap: wrap;
+}
+
+.signup-form input {
+  min-width: 180px;
+}
+
 .result {
   margin-top: 15px;
 }
