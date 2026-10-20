@@ -7,6 +7,30 @@ const airResult = document.getElementById("airResult");
 const summaryForm = document.getElementById("summaryForm");
 const summaryCityInput = document.getElementById("summaryCityInput");
 const summaryResult = document.getElementById("summaryResult");
+const signupForm = document.getElementById("signupForm");
+const signupEmailInput = document.getElementById("signupEmailInput");
+const signupCityInput = document.getElementById("signupCityInput");
+const signupResult = document.getElementById("signupResult");
+
+signupForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    signupResult.textContent = "Signing up…";
+    try {
+        const response = await fetch("/api/subscribe", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({email: signupEmailInput.value, city: signupCityInput.value}),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(data.error);
+        }
+        signupResult.textContent = data.message;
+        signupForm.reset();
+    } catch (error) {
+        signupResult.textContent = error.message;
+    }
+});
 
 summaryForm.addEventListener("submit", async (event) => {
     event.preventDefault();
